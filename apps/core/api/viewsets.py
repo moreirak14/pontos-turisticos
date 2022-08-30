@@ -16,9 +16,9 @@ class PontoTuristicoViewSet(ModelViewSet):
             return PontoTuristico.objects.filter(id=id)
 
         if nome is not None:
-            return PontoTuristico.objects.filter(nome=nome)
+            return PontoTuristico.objects.filter(nome__iexact=nome)
 
         if descricao is not None:
-            return PontoTuristico.objects.filter(descricao=descricao)
+            return PontoTuristico.objects.filter(descricao__iexact=descricao)
 
         return PontoTuristico.objects.all()
