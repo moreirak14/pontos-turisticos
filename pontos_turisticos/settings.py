@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "apps.core",
     "apps.atracoes",
     "apps.comentarios",
+    "apps.avaliacoes",
 ]
 
 MIDDLEWARE = [
