@@ -19,10 +19,12 @@ from rest_framework import routers
 
 from apps.atracoes.api.viewsets import AtracaoViewSet
 from apps.core.api.viewsets import PontoTuristicoViewSet
+from apps.enderecos.api.viewsets import EnderecoViewSet
 
 router = routers.DefaultRouter()
 router.register(r"pontoturistico", PontoTuristicoViewSet)
 router.register(r"atracoes", AtracaoViewSet)
+router.register(r"enderecos", EnderecoViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
