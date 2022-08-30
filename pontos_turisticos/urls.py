@@ -18,6 +18,7 @@ from django.urls import include, path
 from rest_framework import routers
 
 from apps.atracoes.api.viewsets import AtracaoViewSet
+from apps.avaliacoes.api.viewsets import AvaliacaoViewSet
 from apps.comentarios.api.viewsets import ComentarioViewSet
 from apps.core.api.viewsets import PontoTuristicoViewSet
 from apps.enderecos.api.viewsets import EnderecoViewSet
@@ -27,6 +28,7 @@ router.register(r"pontoturistico", PontoTuristicoViewSet)
 router.register(r"atracoes", AtracaoViewSet)
 router.register(r"enderecos", EnderecoViewSet)
 router.register(r"comentarios", ComentarioViewSet)
+router.register(r"avaliacoes", AvaliacaoViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
