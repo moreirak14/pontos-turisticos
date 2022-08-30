@@ -8,4 +8,17 @@ class PontoTuristicoViewSet(ModelViewSet):
     serializer_class = PontoTuristicoSerializer
 
     def get_queryset(self):
-        return PontoTuristico.objects.filter(aprovado=True)
+        id = self.request.query_params.get("id", None)
+        nome = self.request.query_params.get("nome", None)
+        descricao = self.request.query_params.get("id", None)
+
+        if id is not None:
+            return PontoTuristico.objects.filter(id=id)
+
+        if nome is not None:
+            return PontoTuristico.objects.filter(nome=nome)
+
+        if descricao is not None:
+            return PontoTuristico.objects.filter(descricao=descricao)
+
+        return PontoTuristico.objects.all()
