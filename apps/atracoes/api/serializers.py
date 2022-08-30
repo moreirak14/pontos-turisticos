@@ -13,4 +13,5 @@ class AtracaoSerializer(serializers.ModelSerializer):
             "horario_func",
             "idade_minima",
             "observacoes",
+            "foto",
         ]
