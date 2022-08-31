@@ -1,4 +1,6 @@
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.filters import SearchFilter
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from apps.core.api.serializers import PontoTuristicoSerializer
@@ -6,6 +8,8 @@ from apps.core.models import PontoTuristico
 
 
 class PontoTuristicoViewSet(ModelViewSet):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     serializer_class = PontoTuristicoSerializer
     filter_backends = (SearchFilter,)
     search_fields = ("nome", "descricao", "aprovado", "endereco__linha1")
