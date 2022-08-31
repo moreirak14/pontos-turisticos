@@ -25,4 +25,5 @@ class PontoTuristicoSerializer(serializers.ModelSerializer):
             "avaliacoes",
             "endereco",
             "foto",
+            "descricao_completa",
         ]

@@ -18,5 +18,10 @@ class PontoTuristico(models.Model):
     )
     foto = models.ImageField(upload_to="pontos_turisticos", null=True, blank=True)
 
+    @property
+    def descricao_completa(self):
+        self.aprovado = "Sim" if self.aprovado else "Não"
+        return f"Nome: {self.nome} - Aprovado: {self.aprovado}"
+
     def __str__(self):
         return self.nome
